@@ -1,0 +1,123 @@
+.loginOuterContainer {
+  max-width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 90px;
+}
+.loginContent {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.loginText {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 7rem;
+  color: #0bf0bd;
+}
+.welcomeText {
+  color: #5f70e1;
+  text-align: center;
+  font-size: 2.1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+}
+.loginText span {
+  color: #37dbff;
+}
+.loginForm {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.loginInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.loginInputs input {
+  width: 40rem;
+  height: 5rem;
+  border-radius: 30px;
+  font-size: 2rem;
+  padding: 0 0 2px 20px;
+}
+.loginInputs input:focus {
+  border: none;
+  outline: 2px solid #0711a1;
+}
+.loginInputs label {
+  font-size: 2rem;
+}
+
+.loginButton {
+  width: 106px;
+  height: 45px;
+  border-radius: 30px;
+  background-color: #0bf0bd;
+  border: none;
+  transition: 0.3s all;
+  translate: 0px -6px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+}
+.loginButton:hover {
+  background-color: #ffd775;
+  transition: 0.3s all;
+  translate: 0px 0px;
+}
+.loginButtonContainer {
+  width: 106px;
+  height: 45px;
+  border-radius: 30px;
+  background-color: #000000;
+}
+
+.black {
+  color: #000000;
+  font-size: 2.7rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+.red {
+  color: #ff3f58;
+}
+
+.loginTextContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+@media (max-width: 504px) {
+  .loginOuterContainer img {
+    width: 30rem;
+  }
+  .loginInputs input {
+    width: 35rem;
+  }
+  .loginText {
+    font-size: 5.5rem;
+}
+}
+@media (max-width: 380px) {
+  .loginInputs input {
+    width: 30rem;
+  }
+  .loginText {
+    font-size: 5rem;
+  }
+  .welcomeText {
+    font-size: 1.7rem;
+  }
+}

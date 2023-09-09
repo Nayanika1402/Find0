@@ -1,0 +1,78 @@
+.heroContainer {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6rem;
+  margin-top: 5rem;
+}
+
+.heroContainer img {
+  width: 45rem;
+  border-radius: 30px;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+}
+
+.heroContent {
+  max-width: 56rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+.heroContent h1 {
+  font-size: 6rem;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.heroContent p {
+  font-size: 2rem;
+  font-family: "Work Sans", sans-serif;
+}
+
+.brandO {
+  color: #ff3f58;
+}
+
+.heroBtnContainer {
+  height: 45px;
+  width: 113px;
+  background-color: #080808;
+  border-radius: 30px;
+}
+.heroBtn {
+  padding: 13px 25px;
+  background-color: #37dbff;
+  border-radius: 30px;
+  color: #fff;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  font-size: 1.6rem;
+  transition: 0.3s all;
+  translate: 0px -4px;
+}
+.heroBtn:hover {
+  background-color: #0bf0bd;
+  translate: 0px 0px;
+  transition: 0.3s all;
+}
+
+@media (max-width: 510px) {
+  .heroContainer img {
+    width: 40rem;
+  }
+}
+@media (max-width: 429px) {
+  .heroContainer img {
+    width: 35rem;
+  }
+}
+@media (max-width: 387px) {
+  .heroContainer img {
+    width: 30rem;
+  }
+}

@@ -1,0 +1,132 @@
+header{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+nav {
+  max-width: 85%;
+  padding: 22px 8px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row;
+}
+.brand h2 {
+  font-size: 2.7rem;
+  font-weight: 700;
+}
+.brand img {
+  width: 6rem;
+  border-radius: 50px;
+}
+.navList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 3.8rem;
+  font-family: "Work Sans", sans-serif;
+}
+.navLinks {
+  text-decoration: none;
+  color: black;
+}
+.navLinks:hover {
+  text-decoration: none;
+  color: #0bf0bd;
+}
+.navLinksBtn {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+.navButton {
+  padding: 13px 25px;
+  font-size: 1.6rem;
+  border-radius: 30px;
+  border: none;
+  background-color: #ffd775;
+   transition: 0.3s all;
+  translate: 0px -4px;
+}
+
+.navButton:hover {
+  background-color: #0bf0bd;
+   transition: 0.3s all;
+  translate: 0px 0px;
+}
+.navButtonContainer{
+   height: 45px;
+  width: 96px;
+  background-color: #080808;
+  border-radius: 30px;
+}
+.menuButtons {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .navList {
+    display: none;
+  }
+  .menuButtons {
+    display: block;
+    font-size: 3.5rem;
+    display: flex;
+    align-items: center;
+    z-index: 5;
+  }
+  .gradient-background {
+    background: linear-gradient(161deg, #37dbff, #0711a1);
+    background-size: 120% 120%;
+    animation: gradient-animation 12s ease infinite;
+  }
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .navListt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    flex-direction: column;
+    gap: 5rem;
+    position: absolute;
+    width: 100vw;
+    height: 80vh;
+    right: 000px;
+    top: 0;
+    /* background: #37dbff; */
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+     /* background: linear-gradient(131deg,#37dbff,#04559d,#f3a1d2);
+  background-size: 180% 180%;
+  animation: gradient-animation 15s ease infinite; */
+    background: linear-gradient(313deg,#07eeba,#ff3f58,#5365d9,#ea608f,#ffd8f5);
+  background-size: 300% 300%;
+  animation: gradient-animation 15s ease infinite;
+  z-index: 5;
+  }
+  .navLinks{
+    color: #fff;
+  }
+}

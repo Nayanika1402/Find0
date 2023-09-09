@@ -1,0 +1,125 @@
+.rloginOuterContainer {
+  max-width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.rloginContent {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.rloginOuterContainer img {
+  width: 60rem;
+}
+.rloginText {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 7rem;
+  color: #0bf0bd;
+}
+.rwelcomeText {
+  color: #5f70e1;
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+}
+.rloginText span {
+  color: #37dbff;
+}
+.rloginForm {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.rloginInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.rloginInputs input {
+  width: 53rem;
+  height: 5rem;
+  border-radius: 30px;
+  font-size: 2rem;
+  padding: 0 0 2px 20px;
+}
+.rloginInputs input:focus {
+  border: none;
+  outline: 2px solid #0711a1;
+}
+.rloginInputs label {
+  font-size: 2rem;
+}
+
+.rloginButton {
+  width: 106px;
+  height: 45px;
+  border-radius: 30px;
+  background-color: #0bf0bd;
+  border: none;
+  transition: 0.3s all;
+  translate: 0px -7px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+.rloginButton:hover {
+  background-color: #ffd775;
+  transition: 0.3s all;
+  translate: 0px 0px;
+}
+.rloginButtonContainer {
+  width: 106px;
+  height: 45px;
+  border-radius: 30px;
+  background-color: #000000;
+}
+
+.black {
+  color: #000000;
+  font-size: 2.7rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+.red {
+  color: #ff3f58;
+}
+
+.rloginTextContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+@media (max-width: 504px) {
+  .rloginOuterContainer img {
+    width: 35rem;
+  }
+  .rloginInputs input {
+    width: 35rem;
+  }
+  .rloginText {
+    font-size: 5.5rem;
+  }
+}
+@media (max-width: 380px) {
+  .rloginInputs input {
+    width: 30rem;
+  }
+  .rloginText {
+    font-size: 5rem;
+  }
+  .rwelcomeText {
+    font-size: 1.7rem;
+  }
+}

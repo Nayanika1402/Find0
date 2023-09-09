@@ -1,0 +1,98 @@
+.upperSectionHeadings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 5px;
+  flex-direction: column;
+  gap: 8.5rem;
+}
+.upperSectionHeadings h2 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 5rem;
+  font-weight: 800;
+}
+.hackathons h3 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: #0bf0bd;
+}
+.hackathons h3 span {
+  color: #37dbff;
+}
+.internships h3 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: black;
+}
+.internships h3 span {
+  color: #ff3f58;
+}
+.techEvents h3 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: black;
+}
+.techEvents h3 span {
+  color: #ff3f58;
+}
+.upperSectionHeadings h2 span {
+  color: #ff3f58;
+}
+.events {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+.hackathons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 85%;
+  gap: 5rem;
+
+}
+.internships {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 85%;
+  gap: 5rem;
+
+}
+.techEvents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 85%;
+  gap: 5rem;
+
+}
+
+
+.showmore {
+    padding: 13px 24px;
+    border-radius: 30px;
+    border: none;
+      font-family: "Ubuntu", sans-serif;
+  font-weight: 800;
+
+    font-size: 1.4rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #e7eaea;
+  transition: 0.5s all;
+  cursor: pointer;
+
+}
+
+.showmore:hover{
+  background-color: #ff3f58;
+  transition: 0.5s all;
+}

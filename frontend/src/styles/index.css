@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Karla:ital,wght@0,300;1,200&family=Montserrat:wght@200;600&family=Poppins:wght@200&family=Roboto:wght@300;400&family=Ubuntu:wght@300;500&family=Work+Sans:wght@300&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+
+}
+::-webkit-scrollbar {
+  width: 1rem;
+  border-radius: 0.5rem;
+  background-color: #db7272;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0bf0bd;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ffd775;
+}
