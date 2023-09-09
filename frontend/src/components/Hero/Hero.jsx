@@ -9,14 +9,20 @@ const Hero = () => {
           Find <span className="brandO">O .</span>
         </h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae, beatae
-          ab dolor voluptatibus omnis ipsa Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Autem quisquam aut aspernatur! Qui,
-          vitae maiores.
+          Our website is a complete package which gives access to knowledge of
+          all the upcoming Events, Hackathons, Domain Expertise Guide as well as
+          the required Resources for beginners to start coding.
         </p>
         <div>
           <div className="heroBtnContainer">
-            <button className="heroBtn" onClick={()=>{navigate('/explore')}}>Explore</button>
+            <button
+              className="heroBtn"
+              onClick={() => {
+                navigate("/explore");
+              }}
+            >
+              Explore
+            </button>
           </div>
         </div>
       </div>
