@@ -1,19 +1,21 @@
 import './Icard.css'
 
-const ICard = ({role,companyName , imgUrl}) => {
+const ICard = ({role,companyName , imgUrl , link}) => {
   return (
     <div>
       <div className="card">
         <div className="card__img">
-          <img
-            src={imgUrl}
-            alt="Internship"
-          />
+          <img src={imgUrl} alt="Internship" />
         </div>
         <div className="card__subtitle">{role}</div>
         <div className="card__wrapper">
           <div className="card__title">{companyName}</div>
-          <div className="card__icon">
+          <div
+            className="card__icon"
+            onClick={() => {
+              window.location.href = link;
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 256 256"

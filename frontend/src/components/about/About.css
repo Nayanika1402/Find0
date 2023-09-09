@@ -1,83 +1,161 @@
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .row h1 {
-    width: 100%;
+
+:root {
+  --black: #0a0a13;
+  --red: #0bf0bd;
+  --coral: #9a86f3;
+  --gradient: linear-gradient(90deg, var(--red), var(--coral));
+}
+
+#features{
+  padding: 3rem 9%;
+}
+
+h1 .heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.features .box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+h1.heading {
     text-align: center;
-    font-size: 3.75em;
-    margin: 0.6em 0;
+    font-size: 4rem;
     font-weight: 600;
-    color: #070024;
+    margin-bottom: 50px;
+}
+
+.features .box-container .box {
+  margin: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  background: rgba(237, 23, 111, 0.05);
+  padding: 1rem;
+  flex: 1 1 30rem;
+  cursor: pointer;
+}
+
+.features .box-container .box i {
+  color: var(--red);
+  font-size: 5rem;
+  padding: 1rem;
+}
+
+.features .box-container .box h3 {
+  color: var(--black);
+  font-size: 2.4rem;
+}
+
+.features .box-container .box p {
+  color: #666;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.features .box-container .box:hover {
+  background: var(--gradient);
+}
+
+.features .box-container .box:hover > * {
+  color: #fff;
+}
+
+/* media queries */
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
   }
-  .column {
-    padding: 1em;
+
+  header {
+    padding: 2rem 4%;
   }
-  .card {
-    padding: 3.1em 1.25em;
+
+  section {
+    padding: 3rem 4%;
+  }
+
+  .usage .row {
+    flex-flow: column;
+  }
+
+  .usage .row .divider {
+    display: none;
+  }
+
+  .usage .row .box-container .box {
     text-align: center;
-    background: linear-gradient(0deg, #397ef6 10px, transparent 10px);
-    background-repeat: no-repeat;
-    background-position: 0 0.62em;
-    box-shadow: 0 0 2.5em rgba(0, 0, 0, 0.15);
-    border-radius: 0.5em;
-    transition: 0.5s;
-    cursor: pointer;
-    margin-bottom: 2em;
   }
-  .card .icon {
-    font-size: 2.5em;
-    height: 2em;
-    width: 2em;
-    margin: auto;
-    background-color: #397ef6;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  #menu-bar {
+    display: block;
   }
-  .icon:before {
+
+  header .navbar {
     position: absolute;
-    content: "";
-    height: 1.5em;
-    width: 1.5em;
-    border: 0.12em solid #397ef6;
-    border-radius: 50%;
-    transition: 0.5s;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--black);
+    border-top: 0.1rem solid #fff3;
+    padding: 1rem 2rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   }
-  .card h3 {
-    font-size: 1.3em;
-    margin: 1em 0 1.4em 0;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    color: #070024;
+
+  header .navbar.nav-toggle {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
-  .card p {
-    line-height: 2em;
-    color: #625a71;
+
+  header .navbar a {
+    display: block;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: var(--gradient);
+    text-align: center;
+    border-radius: 0.5rem;
   }
-  .card:hover {
-    background-position: 0;
+
+  header .navbar a:hover {
+    color: var(--black);
   }
-  .card:hover .icon:before {
-    height: 2.25em;
-    width: 2.25em;
+
+  .fa-times {
+    transform: rotate(180deg);
   }
-  @media screen and (min-width: 768px) {
-    section {
-      padding: 1em 7em;
-    }
+
+  .home .content h3 {
+    font-size: 4rem;
   }
-  @media screen and (min-width: 992px) {
-    section {
-      padding: 1em;
-    }
-    .card {
-      padding: 5em 2em;
-    }
-    .column {
-      flex: 0 0 33.33%;
-      max-width: 33.33%;
-      padding: 0 1em;
-    }
+
+  .home .content p {
+    font-size: 1.5rem;
+  }
+
+  .about .row .content {
+    text-align: center;
+  }
+
+  .about .row .content .buttons a {
+    width: 100%;
+  }
+
+  .about .row .content .buttons a:last-child {
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 50%;
+  }
+
+  .heading {
+    font-size: 3.5rem;
+  }
 }

@@ -1,11 +1,14 @@
 const sendCookie = require("../utils/jwt.js");
 const bcrpyt = require("bcryptjs");
 const User = require("../models/UserSchema.js");
-const { ErrorHandler }= require("../middlewares/error.js");
- 
+const Internship = require("../models/InternshipSchema.js");
+const Hackathon = require("../models/HackthonSchema.js");
+const { ErrorHandler } = require("../middlewares/error.js");
+
 const register = async (req, res, next) => {
-  try { 
-    const { name, email, password , cpassword , course , collage , phone } = req.body;
+  try {
+    const { name, email, password, cpassword, course, collage, phone } =
+      req.body;
     console.log(cpassword);
     let user = await User.findOne({ email });
 
@@ -16,7 +19,7 @@ const register = async (req, res, next) => {
       name,
       email,
       password: hashedPassword,
-      cpassword : hashedPassword,
+      cpassword: hashedPassword,
       course,
       collage,
       phone,
@@ -26,8 +29,6 @@ const register = async (req, res, next) => {
     next(error);
   }
 };
-
-
 
 const login = async (req, res, next) => {
   try {
@@ -84,6 +85,74 @@ const deleteUser = async (req, res, next) => {
   }
 };
 
+const createInternships = async (req, res, next) => {
+  try {
+    const { role, companyName, imgUrl, link } = req.body;
+    let user = await Internship.findOne({ link });
+    if (user) return next(new ErrorHandler("Internship exist", 400));
+    user = await Internship.create({
+      role,
+      companyName,
+      imgUrl,
+      link,
+    });
+    res.status(200).json("Internship Added!");
+  } catch (error) {
+    next(error);
+  }
+};
 
+const getInternships = async (req, res, next) => {
+  try {
+    let user = await Internship.find();
+    res.status(200).json(user);
+  } catch (error) {
+    next(error);
+  }
+};
 
-module.exports = {register , login , logout , deleteUser , getMyDetail}
+const createHackathon = async (req, res) => {
+  const { hackathonName, mainTechStack, sideTechStack, imgUrl, link } =
+    req.body;
+  let hackathon = await Hackathon.findOne({ link });
+  if (hackathon) {
+    return res.status(401).json("Hackathon Exists");
+
+  }
+  try {
+    const newHackathon = new Hackathon({
+      hackathonName,
+      mainTechStack,
+      sideTechStack,
+      imgUrl,
+      link,
+    });
+    await newHackathon.save();
+    res.status(201).json(newHackathon);
+  } catch (error) {
+    console.error("Error creating hackathon:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+const getHackathon = async (req, res) => {
+  try {
+    const hackathons = await Hackathon.find();
+    res.json(hackathons);
+  } catch (error) {
+    console.error("Error getting hackathons:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+module.exports = {
+  register,
+  login,
+  logout,
+  deleteUser,
+  getMyDetail,
+  createInternships,
+  getInternships,
+  getHackathon,
+  createHackathon,
+};

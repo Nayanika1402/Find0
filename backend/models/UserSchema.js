@@ -41,11 +41,3 @@ module.exports = User
 
 
 
-
-  //  name: "",
-  //   phone: "",
-  //   email: "",
-  //   collage:"",
-  //   course:"",
-  //   password: "",
-  //   cpassword: "",

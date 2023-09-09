@@ -4,11 +4,11 @@ import About from '../components/about/About'
 const Home = () => {
   return (
     <div>
-      <Hero/>
-      <About/>
-      <Gallery/>
+      <Hero />
+        <About />
+      <Gallery />
     </div>
-  )
+  );
 }
 
 export default Home

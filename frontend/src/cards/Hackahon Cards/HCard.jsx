@@ -1,7 +1,7 @@
 import "./Hcard.css";
 
 
-const HCard = ({ hackathonName, mainTechStack, sideTechStack , imgUrl }) => {
+const HCard = ({ hackathonName, mainTechStack, sideTechStack , imgUrl , link }) => {
   return (
     <div className="hcard">
       <article className="article-wrapper">
@@ -14,7 +14,7 @@ const HCard = ({ hackathonName, mainTechStack, sideTechStack , imgUrl }) => {
         <div className="project-info">
           <div className="flex-pr">
             <div className="project-title text-nowrap">{hackathonName}</div>
-            <div className="project-hover">
+            <div onClick={()=>{window.location.href = link}} className="project-hover">
               <svg
                 style={{ color: "black" }}
                 xmlns="http://www.w3.org/2000/svg"
