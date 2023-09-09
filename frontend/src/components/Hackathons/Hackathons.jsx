@@ -103,7 +103,7 @@ const Hackathons = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
       axios
-        .get(`http://localhost:8080/api/hackathons`, {
+        .get(`https://find0.onrender.com/api/hackathons`, {
           withCredentials: true,
         })
         .then((response) => {

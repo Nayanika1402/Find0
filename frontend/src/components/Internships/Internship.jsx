@@ -15,7 +15,7 @@ const Internship = () => {
     const [idata, setData] = useState([]);
     useEffect(() => {
       axios
-        .get(`http://localhost:8080/api/internships`, {
+        .get(`https://find0.onrender.com/api/internships`, {
           withCredentials: true,
         })
         .then((response) => {

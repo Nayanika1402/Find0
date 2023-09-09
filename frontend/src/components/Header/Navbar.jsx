@@ -11,7 +11,7 @@ const Navbar = () => {
   const { state, dispatch } = useContext(GlobalContext);
   const logout = async () => {
     try {
-      // await axios.get(`https://the-codebird-sever.vercel.app/api/logout`, {
+      // await axios.get(`https://find0.onrender.com/api/logout`, {
       //   withCredentials: true,
       // });
       // setShowProfile(!showProfile);

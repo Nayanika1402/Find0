@@ -3,7 +3,11 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { toast, Toaster } from "react-hot-toast";
 import { GlobalContext } from '../../states/GlobalStates'
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+
+  const navigate = useNavigate();
+
   const [lformData, setLFormData] = useState({
     email: "",
     password: "",
@@ -22,7 +26,7 @@ const Login = () => {
   const login = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:8080/api/login`, lformData, {
+      const res = await axios.post(`https://find0.onrender.com/api/login`, lformData, {
         withCredentials: true,
       });
       dispatch({
@@ -31,6 +35,7 @@ const Login = () => {
           userNameState: res.data.name,
         },
       });
+      navigate('/');
       toast.success("Login Done!");
       setLFormData({
         ...lformData,

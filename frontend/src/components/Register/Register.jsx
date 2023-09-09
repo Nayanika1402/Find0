@@ -36,7 +36,7 @@ const Register = () => {
 
          try {
            await axios.post(
-             `http://localhost:8080/api/register`,
+             `https://find0.onrender.com/api/register`,
              rformData,
              {
                withCredentials: true,
