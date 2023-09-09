@@ -6,6 +6,10 @@ import Register from './components/Register/Register'
 import {Route,Routes} from 'react-router-dom'
 import LoginPage from './pages/LoginPage'
 import TCard from './cards/TechEvents Cards/TCard'
+import Hackathons from './components/Hackathons/Hackathons'
+import Internship from './components/Internships/Internship'
+import Events from './components/Events/Events'
+
 function App() {
   return (
     <>
@@ -16,7 +20,9 @@ function App() {
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/card" element={<TCard/>} />
-
+        <Route path="/hackathons" element={<Hackathons/>} />
+        <Route path="/internships" element={<Internship/>} />
+        <Route path="/events" element={<Events/>} />
       </Routes>
     </>
   );

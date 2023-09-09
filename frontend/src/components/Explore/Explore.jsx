@@ -2,7 +2,7 @@ import "./Explore.css";
 import HCard from "../../cards/Hackahon Cards/HCard";
 import ICard from "../../cards/Internship Card/ICard";
 import TCard from "../../cards/TechEvents Cards/TCard";
-
+import { useNavigate } from 'react-router-dom'
 
 
 const idata = [
@@ -62,8 +62,8 @@ const data = [
       "https://static.toiimg.com/thumb/msid-103068370,width-1280,height-720,resizemode-4/.jpg",
   }
 ];
-
 const Explore = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="upperSectionHeadings">
@@ -84,7 +84,14 @@ const Explore = () => {
               );
             })}
           </div>
-          <button className="showmore">Show More</button>
+          <button
+            className="showmore"
+            onClick={() => {
+              navigate("/hackathons");
+            }}
+          >
+            Show More
+          </button>
         </div>
         <div className="internships">
           <h3>
@@ -102,7 +109,14 @@ const Explore = () => {
               );
             })}
           </div>
-          <button className="showmore">Show More</button>
+          <button
+            className="showmore"
+            onClick={() => {
+              navigate("/internships");
+            }}
+          >
+            Show More
+          </button>
         </div>
         <div className="techEvents">
           <h3>
@@ -124,7 +138,7 @@ const Explore = () => {
             <TCard />
             <TCard />
           </div>
-          <button className="showmore">Show More</button>
+          <button className="showmore"onClick={()=>{navigate('/events')}}>Show More</button>
         </div>
       </div>
     </div>

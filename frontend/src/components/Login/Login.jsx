@@ -1,48 +1,43 @@
 import "./Login.css";
 import { useState } from "react";
 import axios from "axios";
+import { toast, Toaster } from "react-hot-toast";
+
 const Login = () => {
-   const [lformData, setLFormData] = useState({
-     email: "",
-     password: "",
-   });
+  const [lformData, setLFormData] = useState({
+    email: "",
+    password: "",
+  });
 
-   const handleInputChangeLogin = (event) => {
-     const { name, value } = event.target;
-     setLFormData({
-       ...lformData,
-       [name]: value,
-     });
-   };
+  const handleInputChangeLogin = (event) => {
+    const { name, value } = event.target;
+    setLFormData({
+      ...lformData,
+      [name]: value,
+    });
+  };
 
-
-       const login = async (e) => {
-         e.preventDefault();
-
-         try {
-           await axios.post(`http://localhost:8080/api/login`, lformData, {
-             withCredentials: true,
-           });
-           window.alert("Register");
-           //  toast.success("Register Done,You Can Login Now!");
-           setLFormData({
-             ...lformData,
-             email: "",
-             password: ""
-           });
-         } catch (error) {
-           window.alert("Error");
-           console.log(error);
-           //  toast.error("Register Failed!");
-         }
-       };
-
-
-
-
+  const login = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(`http://localhost:8080/api/login`, lformData, {
+        withCredentials: true,
+      });
+      toast.success("Login Done!");
+      setLFormData({
+        ...lformData,
+        email: "",
+        password: "",
+      });
+    } catch (error) {
+      console.log(error);
+      toast.error("Login Failed!");
+    }
+  };
 
   return (
     <section>
+      <Toaster />
       <div className="loginTextContainer">
         <h1 className="loginText">
           Login <span>Here</span>
@@ -84,7 +79,9 @@ const Login = () => {
               />
             </div>
             <div className="loginButtonContainer">
-              <button className="loginButton" onClick={login}>Login</button>
+              <button className="loginButton" onClick={login}>
+                Login
+              </button>
             </div>
           </form>
         </div>

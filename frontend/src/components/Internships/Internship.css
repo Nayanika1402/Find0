@@ -1,0 +1,28 @@
+.upperSectionHeadings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 5px;
+  flex-direction: column;
+  gap: 8.5rem;
+}
+
+.internships {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 85%;
+  gap: 5rem;
+
+}
+
+.internships h3 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: black;
+}
+.internships h3 span {
+  color: #ff3f58;
+}

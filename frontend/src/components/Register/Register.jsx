@@ -2,6 +2,7 @@ import "./Register.css";
 import { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast, Toaster } from "react-hot-toast";
 
 
 
@@ -30,12 +31,6 @@ const Register = () => {
       });
     };
 
-    // const register = (e)=>{
-    //   e.preventDefault();
-    //   console.log(rformData);
-    // }
-
-
      const register = async (e) => {
       e.preventDefault();
 
@@ -47,8 +42,8 @@ const Register = () => {
                withCredentials: true,
              }
            );
-           window.alert("Register")
-          //  toast.success("Register Done,You Can Login Now!");
+          //  window.alert("Register")
+           toast.success("Register Done,You Can Login Now!");
            setRFormData({
              ...rformData,
              name: "",
@@ -58,14 +53,15 @@ const Register = () => {
              cpassword: "",
            });
          } catch (error) {
-           window.alert("Error");
+          //  window.alert("Error");
            console.log(error);
-          //  toast.error("Register Failed!");
+           toast.error("Register Failed!");
          }
      };
 
   return (
     <section>
+      <Toaster/>
       <div className="rloginTextContainer">
         <h1 className="rloginText">
           Register <span>Here</span>

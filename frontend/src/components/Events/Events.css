@@ -1,0 +1,26 @@
+.upperSectionHeadings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 5px;
+  flex-direction: column;
+  gap: 8.5rem;
+}
+.techEvents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 85%;
+  gap: 5rem;
+
+}
+.techEvents h3 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: black;
+}
+.techEvents h3 span {
+  color: #ff3f58;
+}

@@ -1,0 +1,42 @@
+.events {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+.hackathons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 85%;
+  gap: 5rem;
+
+}
+
+.events {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+.hackathons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 85%;
+  gap: 5rem;
+
+}
+
+.upperSectionHeadings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 5px;
+  flex-direction: column;
+  gap: 8.5rem;
+}
