@@ -1,0 +1,43 @@
+.footer {
+  background: linear-gradient(313deg, #07eeba, #ff3f58, #5365d9, #ea608f);
+  background-size: 300% 300%;
+  animation: gradient-animation 15s ease infinite;
+  border-top-left-radius: 90px;
+  width: 98vw;
+  padding: 150px 0;
+  color: #fff;
+  margin-top: 80px;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 20px;
+}
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 140px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.footerDiv {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  flex-direction: column;
+}
+.footer img {
+  width: 104px;
+  border-radius: 52px;
+}
+
+.iconss p {
+  font-size: 20px;
+}
+.credit {
+  margin-top: 20px;
+  text-align: center;
+}

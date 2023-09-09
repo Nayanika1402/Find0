@@ -2,10 +2,25 @@ import "./Navbar.css";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { RxCross1 } from "react-icons/rx";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { GlobalContext } from '../../states/GlobalStates'
+
+
 const Navbar = () => {
   const [active, setActive] = useState(false);
-
+  const { state, dispatch } = useContext(GlobalContext);
+  const logout = async () => {
+    try {
+      // await axios.get(`https://the-codebird-sever.vercel.app/api/logout`, {
+      //   withCredentials: true,
+      // });
+      // setShowProfile(!showProfile);
+      dispatch({ type: "LOGOUT" });
+      // navigate("/login");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <header>
       <nav>
@@ -39,18 +54,30 @@ const Navbar = () => {
               About
             </Link>
           </li>
-          <li>
-            <Link className="navLinks" to={"/register"}>
-              Register
-            </Link>
-          </li>
-          <div className="navButtonContainer">
-            <button className="navButton">
-              <Link className="navLinksBtn" to={"/login"}>
-                Login
-              </Link>
-            </button>
-          </div>
+          {state.isLoggedIn ? (
+            <div className="navButtonContainer">
+              <button className="navButton">
+                <Link className="navLinksBtn" onClick={logout}>
+                  Logout
+                </Link>
+              </button>
+            </div>
+          ) : (
+            <>
+              <li>
+                <Link className="navLinks" to={"/register"}>
+                  Register
+                </Link>
+              </li>
+              <div className="navButtonContainer">
+                <button className="navButton">
+                  <Link className="navLinksBtn" to={"/login"}>
+                    Login
+                  </Link>
+                </button>
+              </div>
+            </>
+          )}
         </ul>
         <div className="menuButtons">
           {active ? (

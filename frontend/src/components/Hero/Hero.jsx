@@ -1,6 +1,7 @@
 import "./Hero.css";
-
+import {useNavigate } from 'react-router-dom'
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="heroContainer">
       <div className="heroContent">
@@ -15,7 +16,7 @@ const Hero = () => {
         </p>
         <div>
           <div className="heroBtnContainer">
-            <button className="heroBtn">Explore</button>
+            <button className="heroBtn" onClick={()=>{navigate('/explore')}}>Explore</button>
           </div>
         </div>
       </div>

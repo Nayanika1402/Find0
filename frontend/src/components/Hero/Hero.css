@@ -12,7 +12,6 @@
 .heroContainer img {
   width: 45rem;
   border-radius: 30px;
-  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
 }
 
 .heroContent {
@@ -37,7 +36,7 @@
 }
 
 .heroBtnContainer {
-  height: 45px;
+  height: 53px;
   width: 113px;
   background-color: #080808;
   border-radius: 30px;

@@ -1,13 +1,15 @@
 import "./Login.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
 import { toast, Toaster } from "react-hot-toast";
-
+import { GlobalContext } from '../../states/GlobalStates'
 const Login = () => {
   const [lformData, setLFormData] = useState({
     email: "",
     password: "",
   });
+
+  const { dispatch } = useContext(GlobalContext);
 
   const handleInputChangeLogin = (event) => {
     const { name, value } = event.target;
@@ -20,8 +22,14 @@ const Login = () => {
   const login = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`http://localhost:8080/api/login`, lformData, {
+      const res = await axios.post(`http://localhost:8080/api/login`, lformData, {
         withCredentials: true,
+      });
+      dispatch({
+        type: "LOGIN",
+        payload: {
+          userNameState: res.data.name,
+        },
       });
       toast.success("Login Done!");
       setLFormData({
