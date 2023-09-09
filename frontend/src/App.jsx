@@ -12,6 +12,7 @@ import Events from "./components/Events/Events";
 import Footer from "./components/footer/Footer";
 import { GlobalStateProvider } from "./states/GlobalStates";
 import Content from "./components/content/Content";
+import AboutPage from "./pages/AboutPage";
 function App() {
   return (
     <>
@@ -26,7 +27,9 @@ function App() {
           <Route path="/hackathons" element={<Hackathons />} />
           <Route path="/internships" element={<Internship />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/content" element={<Content />} />
+          <Route path="/resources" element={<Content />} />
+          <Route path="/about" element={<AboutPage/>}/>
+
         </Routes>
         <Footer />
       </GlobalStateProvider>
