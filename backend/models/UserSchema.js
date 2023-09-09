@@ -10,17 +10,42 @@ const schema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  cpassword: {
+    type: String,
+    required: true
+  },
   password: {
     type: String,
-    required: true,
-    select: false,
+    required: true
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
+  phone: {
+    type: Number,
+    required: true
   },
+  collage: {
+    type: String,
+    required: true
+  },
+  course: {
+    type: String,
+    required: true
+  },
+
 });
 
 const User = mongoose.model("User", schema);
 
 module.exports = User
+
+
+
+
+
+
+  //  name: "",
+  //   phone: "",
+  //   email: "",
+  //   collage:"",
+  //   course:"",
+  //   password: "",
+  //   cpassword: "",

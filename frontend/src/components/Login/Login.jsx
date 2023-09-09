@@ -1,6 +1,46 @@
 import "./Login.css";
-
+import { useState } from "react";
+import axios from "axios";
 const Login = () => {
+   const [lformData, setLFormData] = useState({
+     email: "",
+     password: "",
+   });
+
+   const handleInputChangeLogin = (event) => {
+     const { name, value } = event.target;
+     setLFormData({
+       ...lformData,
+       [name]: value,
+     });
+   };
+
+
+       const login = async (e) => {
+         e.preventDefault();
+
+         try {
+           await axios.post(`http://localhost:8080/api/login`, lformData, {
+             withCredentials: true,
+           });
+           window.alert("Register");
+           //  toast.success("Register Done,You Can Login Now!");
+           setLFormData({
+             ...lformData,
+             email: "",
+             password: ""
+           });
+         } catch (error) {
+           window.alert("Error");
+           console.log(error);
+           //  toast.error("Register Failed!");
+         }
+       };
+
+
+
+
+
   return (
     <section>
       <div className="loginTextContainer">
@@ -8,7 +48,7 @@ const Login = () => {
           Login <span>Here</span>
         </h1>
         <p className="welcomeText">
-          Welcome Back In{" "}
+          Welcome Back In
           <span className="black">
             Find <span className="red">O</span>
           </span>
@@ -27,15 +67,24 @@ const Login = () => {
                 type="email"
                 id="email"
                 placeholder="Enter Your Email..."
+                value={lformData.email}
+                onChange={handleInputChangeLogin}
+                name="email"
               />
             </div>
             <div className="loginInputs">
               <label htmlFor="password">Password</label>
-              <input type="password" id="password" 
-              placeholder="Enter Your Password..."/>
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter Your Password..."
+                value={lformData.password}
+                onChange={handleInputChangeLogin}
+                name="password"
+              />
             </div>
             <div className="loginButtonContainer">
-              <button className="loginButton">Login</button>
+              <button className="loginButton" onClick={login}>Login</button>
             </div>
           </form>
         </div>

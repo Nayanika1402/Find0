@@ -5,8 +5,8 @@ const { ErrorHandler }= require("../middlewares/error.js");
  
 const register = async (req, res, next) => {
   try { 
-    const { name, email, password } = req.body;
-
+    const { name, email, password , cpassword , course , collage , phone } = req.body;
+    console.log(cpassword);
     let user = await User.findOne({ email });
 
     if (user) return next(new ErrorHandler("User exist", 400));
@@ -16,12 +16,18 @@ const register = async (req, res, next) => {
       name,
       email,
       password: hashedPassword,
+      cpassword : hashedPassword,
+      course,
+      collage,
+      phone,
     });
     sendCookie(user, res, "Registerd successfully", 201);
   } catch (error) {
     next(error);
   }
 };
+
+
 
 const login = async (req, res, next) => {
   try {

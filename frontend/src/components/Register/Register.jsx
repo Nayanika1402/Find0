@@ -1,5 +1,69 @@
 import "./Register.css";
+import { useState } from "react";
+// import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
+
+
+
+
+
 const Register = () => {
+  // const navigate = useNavigate();
+
+
+  const [rformData, setRFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    collage:"",
+    course:"",
+    password: "",
+    cpassword: "",
+  });
+
+    const handleInputChange = (event) => {
+      const { name, value } = event.target;
+      setRFormData({
+        ...rformData,
+        [name]: value,
+      });
+    };
+
+    // const register = (e)=>{
+    //   e.preventDefault();
+    //   console.log(rformData);
+    // }
+
+
+     const register = async (e) => {
+      e.preventDefault();
+
+         try {
+           await axios.post(
+             `http://localhost:8080/api/register`,
+             rformData,
+             {
+               withCredentials: true,
+             }
+           );
+           window.alert("Register")
+          //  toast.success("Register Done,You Can Login Now!");
+           setRFormData({
+             ...rformData,
+             name: "",
+             phone: "",
+             email: "",
+             password: "",
+             cpassword: "",
+           });
+         } catch (error) {
+           window.alert("Error");
+           console.log(error);
+          //  toast.error("Register Failed!");
+         }
+     };
+
   return (
     <section>
       <div className="rloginTextContainer">
@@ -22,7 +86,14 @@ const Register = () => {
           <form className="rloginForm">
             <div className="rloginInputs">
               <label htmlFor="name">Name</label>
-              <input type="text" id="name" placeholder="Enter Your Name..." />
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter Your Name..."
+                value={rformData.name}
+                onChange={handleInputChange}
+                name="name"
+              />
             </div>
             <div className="rloginInputs">
               <label htmlFor="phone">Phone Number</label>
@@ -30,6 +101,9 @@ const Register = () => {
                 type="number"
                 id="phone"
                 placeholder="Enter Your Phone No..."
+                value={rformData.phone}
+                onChange={handleInputChange}
+                name="phone"
               />
             </div>
             <div className="rloginInputs">
@@ -38,6 +112,9 @@ const Register = () => {
                 type="email"
                 id="email"
                 placeholder="Enter Your Email..."
+                value={rformData.email}
+                onChange={handleInputChange}
+                name="email"
               />
             </div>
             <div className="rloginInputs">
@@ -46,6 +123,9 @@ const Register = () => {
                 type="text"
                 id="collage"
                 placeholder="Enter Your Collage..."
+                value={rformData.collage}
+                onChange={handleInputChange}
+                name="collage"
               />
             </div>
             <div className="rloginInputs">
@@ -54,6 +134,9 @@ const Register = () => {
                 type="text"
                 id="course"
                 placeholder="Enter Your Course..."
+                value={rformData.course}
+                onChange={handleInputChange}
+                name="course"
               />
             </div>
             <div className="rloginInputs">
@@ -62,6 +145,9 @@ const Register = () => {
                 type="password"
                 id="password"
                 placeholder="Enter Your Password..."
+                value={rformData.password}
+                onChange={handleInputChange}
+                name="password"
               />
             </div>
             <div className="rloginInputs">
@@ -70,10 +156,13 @@ const Register = () => {
                 type="password"
                 id="cpassword"
                 placeholder="Enter Your Confirm Password..."
+                value={rformData.cpassword}
+                onChange={handleInputChange}
+                name="cpassword"
               />
             </div>
             <div className="rloginButtonContainer">
-              <button className="rloginButton">Register</button>
+              <button className="rloginButton" onClick={register}>Register</button>
             </div>
           </form>
         </div>
