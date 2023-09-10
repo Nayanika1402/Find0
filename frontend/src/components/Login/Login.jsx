@@ -27,8 +27,12 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post(`https://find0.onrender.com/api/login`, lformData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
         withCredentials: true,
-      });
+      },
+      );
       dispatch({
         type: "LOGIN",
         payload: {
